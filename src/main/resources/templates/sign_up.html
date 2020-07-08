@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link th:href="@{/public/css/signup.css}" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    <script th:src="@{/public/js/signup.js}" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+<div id="container">
+    <h2 style="text-align: center;">Sign up</h2>
+    <p class="para" id="para" hidden></p>
+    <form>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name" autofocus="autofocus"/>
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name" autofocus="autofocus"/>
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" autofocus="autofocus"/>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"/>
+        <input id="submit" type="button" value="Sign up" onclick="send()"/>
+    </form>
+</div>
+</body>
+</html>

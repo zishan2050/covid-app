@@ -1,0 +1,99 @@
+#container {
+    padding-top: 10px;
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+
+#logout, #logout:focus {
+    margin-top: 5px;
+    border-radius: 8px;
+    padding: 5px;
+    color: white;
+    background-color: #2084ba;
+    border: none;
+    float: right;
+    cursor: pointer;
+}
+
+.para {
+    color: white;
+    background-color: indianred;
+    opacity: 0.7;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.chart {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.confirmed {
+    background-color: #2084ba;
+}
+
+.active {
+    background-color: sandybrown;
+}
+
+.recovered {
+    background-color: seagreen;
+}
+
+.deaths {
+    background-color: #d70206;
+}
+
+.ct-series-d .ct-bar {
+    stroke: #2084ba !important;
+}
+
+.ct-series-c .ct-bar {
+    stroke: sandybrown !important;
+}
+
+.ct-series-b .ct-bar {
+    stroke: seagreen !important;
+}
+
+.ct-series-a .ct-bar {
+    stroke: #d70206 !important;
+}
+
+.pie {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 0px !important;
+}
+
+.ct-series-a .ct-slice-pie {
+    stroke: sandybrown !important;
+    fill: sandybrown !important;
+}
+
+.ct-series-b .ct-slice-pie {
+    stroke: seagreen !important;
+    fill: seagreen !important;
+}
+
+.ct-series-c .ct-slice-pie {
+    stroke: #d70206 !important;
+    fill: #d70206 !important;
+}
+
+svg{
+    vertical-align: top !important;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.pie{
+    height: 500px;
+}
