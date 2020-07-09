@@ -21,11 +21,12 @@
     <p th:if="${loginError}" class="error">Wrong username or password</p>
     <form th:action="@{/covid/api/login}" method="post">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" autofocus="autofocus"/>
+        <input type="email" id="username" name="username" autofocus="autofocus"/>
         <label for="password">Password</label>
         <input type="password" id="password" name="password"/>
         <input id="submit" type="submit" value="Log in"/>
     </form>
+    <a href="/covid/app/sign_up.html" style="float: right;">Sign up</a>
 </div>
 </body>
 </html>

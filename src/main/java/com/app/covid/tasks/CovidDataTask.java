@@ -20,6 +20,7 @@ import org.springframework.web.reactive.function.client.ExchangeStrategies;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.netty.http.client.HttpClient;
 
+import javax.annotation.PostConstruct;
 import java.time.LocalDateTime;
 
 @Slf4j
@@ -31,6 +32,15 @@ public class CovidDataTask {
     private final ReactiveRedisOperations<String, String> redisOperations;
     private final ObjectMapper objectMapper;
     private final CovidApiProperties covidApiProperties;
+
+    @PostConstruct
+    public void init(){
+        redisOperations.hasKey(CovidAppConstant.COVID_DATA_REDIS_KEY).filter(exist -> !exist).map(exist -> {
+            log.info("Initializing covid data update");
+            refreshCovidData();
+            return exist;
+        }).subscribe();
+    }
 
     @Scheduled(cron = "${covid.task.cron}", zone = "${covid.task.zone}")
     public void refreshCovidData() {

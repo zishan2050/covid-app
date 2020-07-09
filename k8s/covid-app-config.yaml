@@ -1,0 +1,16 @@
+# covid-app-config
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: covid-app-config
+data:
+  DATABASE_URL: jdbc:postgresql://my-db-release-postgresql.default.svc.cluster.local:5432/postgres
+  DATABASE_USERNAME: postgres
+  DATABASE_PASSWORD: Y19vn8vxPZ
+  REDIS_HOST: my-release-redis-master.default.svc.cluster.local
+  REDIS_PASSWORD: 9HzeODLFRb
+  HOME_PAGE_URL: /covid/app/home.html
+  LOGIN_PAGE_URL: /covid/app/login.html
+  ERROR_PAGE_URL: /covid/app/login.html?error=invalid
+  ALLOWED_CROSS_ORIGIN_URLS: "*"

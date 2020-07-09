@@ -19,8 +19,15 @@ function send() {
             $('#para').text("Redirecting...");
             $(location).attr('href', '/covid/app/login.html')
         },
-        error: function (error){
-            $('#para').text(error.responseJSON.message);
+        error: function (error) {
+            if (error.status == 400) {
+                $('#para').text("");
+                for (var i = 0; i < error.responseJSON.errors.length; i++) {
+                    $('#para').append(error.responseJSON.errors[i]+"<br/>");
+                }
+            } else {
+                $('#para').text(error.responseJSON.message);
+            }
             $('#submit').prop('disabled', false);
         },
         data: JSON.stringify(person)
