@@ -31,7 +31,6 @@ function fetchCovidData() {
         dataType: 'json',
         contentType: 'application/json',
         success: function (data) {
-            console.log(data);
             if (data.length > 0) {
                 $('#total_count').text(data[0].confirmed);
                 $('#active_count').text(data[0].active);
